@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GameAPI_MSA2022</name>
+    </assembly>
+    <members>
+        <member name="M:GameAPI_MSA2022.Controllers.CheapSharkController.#ctor(System.Net.Http.IHttpClientFactory)">
+            <summary />
+        </member>
+        <member name="M:GameAPI_MSA2022.Controllers.CheapSharkController.Get(System.String)">
+            <summary>
+            Gets the raw JSON for games that contains that name and converts to a deserialized json
+            </summary>
+            <returns>A deserialized JSON list representing games containing that name and their cheapest price</returns>
+        </member>
+        <member name="M:GameAPI_MSA2022.Controllers.CheapSharkController.GetFromEpicGames(System.Int32)">
+            <summary>
+            Gets deserialized json from one of the games from EpicGames List
+            </summary>
+            <remarks>
+            Retrieves Data from other endpoint and uses that to search for its lowest price
+            </remarks>
+            <returns>A deserialized JSON list representing games containing the game's name and their cheapest price</returns>
+        </member>
+        <member name="M:GameAPI_MSA2022.Controllers.GameController.GetAll">
+            <summary>
+            This endpoint takes no arguments and gives you a list of games, 
+            </summary>
+            <returns>A list of stored games</returns>
+        </member>
+        <member name="M:GameAPI_MSA2022.Controllers.GameController.Get(System.Int32)">
+            <summary>
+            Get the game entry with the requested id
+            </summary>
+            <param name="id">Id must exist in list</param>
+            <returns>Returns game with the requested id</returns>
+            <response code="200">Successfully returns entry with requested id</response>
+            <response code="404">No entry with that id exist</response>
+        </member>
+        <member name="M:GameAPI_MSA2022.Controllers.GameController.Create(GameAPI_MSA2022.Models.EpicGame)">
+            <summary>
+            Add a new game entry to Games list
+            </summary>
+            <param name="game">Id field not required but name field is required</param>
+            <returns>A new list updated with the new entry</returns>
+            <remarks>
+            Sample Request:
+            
+                POST /Game/{id}
+                {
+                    "name": "Awesome Game",
+                    "isFree": true,
+                    "Genre": "Adventure"
+                }
+                
+            Don't need to include id in body
+            </remarks>
+            <response code="201">Entry successfully added</response>
+            <response code="400">Bad Request, Name field is required</response>
+        </member>
+        <member name="M:GameAPI_MSA2022.Controllers.GameController.Update(System.Int32,GameAPI_MSA2022.Models.EpicGame)">
+            <summary>
+            Updates an existing entry
+            </summary>
+            <param name="id">Id must exist in list</param>
+            <param name="game">id in body must be same as parameter id above</param>
+            <returns>A list with the updated entry</returns>
+            <remarks>
+            Sample Request:
+            
+                PUT /Game/{id}
+                {
+                    "id": 2
+                    "name": "Awesome Game",
+                    "isFree": true,
+                    "Genre": "Adventure"
+                }
+                
+            MAKE SURE ID IS SAME IN BODY AND IN REQUEST!
+            
+            </remarks>
+            <response code="204">Entry successfully updated</response>
+            <response code="404">Entry not found</response>
+            <response code="400">Bad Request, Id in request body needs to match parameter id. Name field is required</response>
+        </member>
+        <member name="M:GameAPI_MSA2022.Controllers.GameController.Delete(System.Int32)">
+            <summary>
+            Deletes the entry with the corrosponding id
+            </summary>
+            <param name="id">Id must exist in list</param>
+            <returns>Updated list with entry with requested id removed</returns>
+            <response code="204">Entry successfully removed</response>
+            <response code="404">Entry not found</response>
+        </member>
+    </members>
+</doc>

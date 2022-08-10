@@ -1,0 +1,6 @@
+C:\Users\vince\Downloads\MSA\Phase 2\Backend\GameAPI_MSA2022\web-api-test\bin\Debug\net6.0\CoverletSourceRootsMapping
+C:\Users\vince\Downloads\MSA\Phase 2\Backend\GameAPI_MSA2022\web-api-test\obj\Debug\net6.0\web-api-test.csproj.AssemblyReference.cache
+C:\Users\vince\Downloads\MSA\Phase 2\Backend\GameAPI_MSA2022\web-api-test\obj\Debug\net6.0\web-api-test.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vince\Downloads\MSA\Phase 2\Backend\GameAPI_MSA2022\web-api-test\obj\Debug\net6.0\web-api-test.AssemblyInfoInputs.cache
+C:\Users\vince\Downloads\MSA\Phase 2\Backend\GameAPI_MSA2022\web-api-test\obj\Debug\net6.0\web-api-test.AssemblyInfo.cs
+C:\Users\vince\Downloads\MSA\Phase 2\Backend\GameAPI_MSA2022\web-api-test\obj\Debug\net6.0\web-api-test.csproj.CoreCompileInputs.cache
