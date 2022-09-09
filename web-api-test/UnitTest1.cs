@@ -1,10 +1,11 @@
 using GameAPI_MSA2022.Controllers;
-using GameAPI_MSA2022.Models;
+using Domain_Layer.Models;
 using Microsoft.AspNetCore.Mvc;
 using FluentAssertions;
 using System.Net;
+using NSubstitute;
 
-namespace GameAPITests
+namespace web_api_test
 {
     public class UnitTest1
     {
@@ -39,7 +40,7 @@ namespace GameAPITests
             // Arrange
             var controller = new GameController();
             // Act
-            var result = controller.Create(new EpicGame {Name="TestingGame", IsFree=false, Genre=""});
+            var result = controller.Create(new EpicGame { Name = "TestingGame", IsFree = false, Genre = "" });
 
             // Assert
             result.Should().BeOfType<CreatedAtActionResult>();
@@ -50,7 +51,7 @@ namespace GameAPITests
             // Arrange
             var controller = new GameController();
             // Act
-            var result = controller.Create(new EpicGame {  IsFree = false, Genre = "" });
+            var result = controller.Create(new EpicGame { IsFree = false, Genre = "" });
 
             // Assert
             result.Should().BeOfType<CreatedAtActionResult>();
@@ -61,7 +62,7 @@ namespace GameAPITests
             // Arrange
             var controller = new GameController();
             // Act
-            var result = controller.Update(2, new EpicGame {Id=3, Name="New Game",IsFree = false, Genre = "" });
+            var result = controller.Update(2, new EpicGame { Id = 3, Name = "New Game", IsFree = false, Genre = "" });
 
             // Assert
             result.Should().BeOfType<BadRequestResult>();
@@ -74,7 +75,7 @@ namespace GameAPITests
             // Arrange
             var controller = new GameController();
             // Act
-            var result = controller.Update(10, new EpicGame { Id = 10, Name = "New Game",IsFree = false, Genre = "" });
+            var result = controller.Update(10, new EpicGame { Id = 10, Name = "New Game", IsFree = false, Genre = "" });
 
             // Assert
             result.Should().BeOfType<NotFoundResult>();
@@ -96,6 +97,7 @@ namespace GameAPITests
         {
             // Arrange
             var controller = new GameController();
+
             // Act
             var result = controller.Delete(7);
 

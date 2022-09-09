@@ -37,7 +37,7 @@
             <response code="200">Successfully returns entry with requested id</response>
             <response code="404">No entry with that id exist</response>
         </member>
-        <member name="M:GameAPI_MSA2022.Controllers.GameController.Create(GameAPI_MSA2022.Models.EpicGame)">
+        <member name="M:GameAPI_MSA2022.Controllers.GameController.Create(Domain_Layer.Models.EpicGame)">
             <summary>
             Add a new game entry to Games list
             </summary>
@@ -58,7 +58,7 @@
             <response code="201">Entry successfully added</response>
             <response code="400">Bad Request, Name field is required</response>
         </member>
-        <member name="M:GameAPI_MSA2022.Controllers.GameController.Update(System.Int32,GameAPI_MSA2022.Models.EpicGame)">
+        <member name="M:GameAPI_MSA2022.Controllers.GameController.Update(System.Int32,Domain_Layer.Models.EpicGame)">
             <summary>
             Updates an existing entry
             </summary>

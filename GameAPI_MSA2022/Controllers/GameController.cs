@@ -1,5 +1,6 @@
-using GameAPI_MSA2022.Models;
-using GameAPI_MSA2022.Services;
+using Domain_Layer.Models;
+
+using Service_Layer.Services;
 using Microsoft.AspNetCore.Mvc;
 
 

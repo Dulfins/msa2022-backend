@@ -1,14 +1,29 @@
 using Microsoft.OpenApi.Models;
+using Service_Layer.Services;
 using System.Reflection;
+using Domain_Layer.Data;
+using MediatR;
 using GameAPI_MSA2022;
 using Microsoft.Extensions.Configuration;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
-// Add services to the container.
 
+// Attempt to add Migration in Onion Architecture
+builder.Services.AddDbContext<ApplicationDbContext>();
+
+//MediatR
+builder.Services.AddMediatR(Assembly.GetExecutingAssembly());
+builder.Services.AddSingleton<GamesService>
+
+
+// Add services to the container.
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+// Learn more about configuring Swagger/OpenAP  I at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
+
+
+
 builder.Services.AddSwaggerGen(options =>
 {
     options.SwaggerDoc("v1", new OpenApiInfo
@@ -27,6 +42,7 @@ builder.Services.AddHttpClient(builder.Configuration["CheapSharkClientName"], co
 {
     client.BaseAddress = new Uri(builder.Configuration["CheapSharkAddress"]);
 });
+
 
 
 var app = builder.Build();
