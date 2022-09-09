@@ -20,7 +20,7 @@ namespace GameAPI_MSA2022.MediatR_Test
 
         [HttpGet]
         [Route("SendRequest")]
-        public async Task<string> SendRequest(string name)
+        public async Task<string> SendRequest(string name )
         {
             var result = await _mediator.Send(new MyRequest(name));
             return result;

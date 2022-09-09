@@ -2,7 +2,7 @@ using Domain_Layer.Models;
 using MediatR;
 namespace Service_Layer.Services;
 
-public class GamesService : IRequest<Game>
+public class GamesService
 {
     static List<Game> Games { get; } 
     static int nextId = 5;

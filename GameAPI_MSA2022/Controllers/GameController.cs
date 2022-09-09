@@ -10,10 +10,13 @@ namespace GameAPI_MSA2022.Controllers;
 [Route("[controller]")]
 public class GameController : ControllerBase
 {
-    
-    public GameController()
+    private IMediator _mediator;
+
+    public GameController(IMediator mediator)
     {
+        _mediator = mediator;
     }
+
 
     /// <summary>
     /// This endpoint takes no arguments and gives you a list of games, 

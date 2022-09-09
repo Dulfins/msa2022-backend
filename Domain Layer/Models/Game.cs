@@ -4,7 +4,7 @@ using MediatR;
 namespace Domain_Layer.Models;
 
 
-public class Game : IRequest<int>
+public class Game 
 {
     public int Id { get; set; }
     [Required]
