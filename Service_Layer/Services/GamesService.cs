@@ -1,28 +1,28 @@
 using Domain_Layer.Models;
-
+using MediatR;
 namespace Service_Layer.Services;
 
-public static class GamesService
+public class GamesService : IRequest<Game>
 {
-
-    static List<EpicGame> Games { get; }
+    static List<Game> Games { get; } 
     static int nextId = 5;
     static GamesService()
     {
-        Games = new List<EpicGame>
+        Games = new List<Game>
         {
-            new EpicGame {Id = 1, Name = "Minecraft", IsFree = false, Genre = "Sandbox"},
-            new EpicGame {Id = 2, Name = "The Last of Us", IsFree = false, Genre = "Survival Horror"},
-            new EpicGame {Id = 3, Name = "Valorant", IsFree = true, Genre = "FPS Shooter"},
-            new EpicGame {Id = 4, Name = "Portal 2", IsFree = false, Genre = "Puzzle"},
+            new Game {Id = 1, Name = "Minecraft", IsFree = false, Genre = "Sandbox"},
+            new Game {Id = 2, Name = "The Last of Us", IsFree = false, Genre = "Survival Horror"},
+            new Game {Id = 3, Name = "Valorant", IsFree = true, Genre = "FPS Shooter"},
+            new Game {Id = 4, Name = "Portal 2", IsFree = false, Genre = "Puzzle"},
         };
     }
 
-    public static List<EpicGame> GetAll() => Games;
+    public static List<Game> GetAll() => Games;
 
-    public static EpicGame? Get(int Id) => Games.FirstOrDefault(p => p.Id == Id);
 
-    public static void Add(EpicGame game)
+    public static Game? Get(int Id) => Games.FirstOrDefault(p => p.Id == Id);
+
+    public static void Add(Game game)
     {
         game.Id = nextId++;
         Games.Add(game);
@@ -36,7 +36,7 @@ public static class GamesService
         Games.Remove(game);
     }
 
-    public static void Update(EpicGame game)
+    public static void Update(Game game)
     {
         var index = Games.FindIndex(p => p.Id == game.Id);
         if (index == -1){return;}

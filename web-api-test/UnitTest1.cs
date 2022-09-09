@@ -18,7 +18,7 @@ namespace web_api_test
             var result = controller.GetAll();
 
             // Assert
-            result.Value.Should().BeOfType<List<EpicGame>>();
+            result.Value.Should().BeOfType<List<Game>>();
         }
 
 
@@ -40,7 +40,7 @@ namespace web_api_test
             // Arrange
             var controller = new GameController();
             // Act
-            var result = controller.Create(new EpicGame { Name = "TestingGame", IsFree = false, Genre = "" });
+            var result = controller.Create(new Game { Name = "TestingGame", IsFree = false, Genre = "" });
 
             // Assert
             result.Should().BeOfType<CreatedAtActionResult>();
@@ -51,7 +51,7 @@ namespace web_api_test
             // Arrange
             var controller = new GameController();
             // Act
-            var result = controller.Create(new EpicGame { IsFree = false, Genre = "" });
+            var result = controller.Create(new Game { IsFree = false, Genre = "" });
 
             // Assert
             result.Should().BeOfType<CreatedAtActionResult>();
@@ -62,7 +62,7 @@ namespace web_api_test
             // Arrange
             var controller = new GameController();
             // Act
-            var result = controller.Update(2, new EpicGame { Id = 3, Name = "New Game", IsFree = false, Genre = "" });
+            var result = controller.Update(2, new Game { Id = 3, Name = "New Game", IsFree = false, Genre = "" });
 
             // Assert
             result.Should().BeOfType<BadRequestResult>();
@@ -75,7 +75,7 @@ namespace web_api_test
             // Arrange
             var controller = new GameController();
             // Act
-            var result = controller.Update(10, new EpicGame { Id = 10, Name = "New Game", IsFree = false, Genre = "" });
+            var result = controller.Update(10, new Game { Id = 10, Name = "New Game", IsFree = false, Genre = "" });
 
             // Assert
             result.Should().BeOfType<NotFoundResult>();

@@ -17,7 +17,7 @@ namespace Domain_Layer.Data
             base.OnModelCreating(builder);
         }
 
-        public DbSet<EpicGame> EpicGames
+        public DbSet<Game> EpicGames
         {
             get;
             set;

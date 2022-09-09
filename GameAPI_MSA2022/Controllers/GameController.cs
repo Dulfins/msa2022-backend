@@ -1,5 +1,5 @@
 using Domain_Layer.Models;
-
+using MediatR;
 using Service_Layer.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -21,7 +21,7 @@ public class GameController : ControllerBase
     /// <returns>A list of stored games</returns>
     [HttpGet]
     [ProducesResponseType(200)]
-    public ActionResult<List<EpicGame>> GetAll() => GamesService.GetAll();
+    public ActionResult<List<Game>> GetAll() => GamesService.GetAll();
 
 
     /// <summary>
@@ -33,7 +33,7 @@ public class GameController : ControllerBase
     /// <response code="404">No entry with that id exist</response>
     [HttpGet("{id}")]
     [ProducesResponseType(200)]
-    public ActionResult<EpicGame> Get(int id)
+    public ActionResult<Game> Get(int id)
     {
         var game = GamesService.Get(id);
         if (game == null)
@@ -61,7 +61,7 @@ public class GameController : ControllerBase
     /// <response code="201">Entry successfully added</response>
     /// <response code="400">Bad Request, Name field is required</response>
     [HttpPost]
-    public IActionResult Create(EpicGame game)
+    public IActionResult Create(Game game)
     {
         GamesService.Add(game);
         return CreatedAtAction(nameof(Create), new { id = game.Id }, game);
@@ -90,7 +90,7 @@ public class GameController : ControllerBase
     /// <response code="404">Entry not found</response>
     /// <response code="400">Bad Request, Id in request body needs to match parameter id. Name field is required</response>
     [HttpPut("{id}")]
-    public IActionResult Update(int id, EpicGame game)
+    public IActionResult Update(int id, Game game)
     {
         if (id != game.Id)
             return BadRequest();

@@ -14,7 +14,7 @@ builder.Services.AddDbContext<ApplicationDbContext>();
 
 //MediatR
 builder.Services.AddMediatR(Assembly.GetExecutingAssembly());
-builder.Services.AddSingleton<GamesService>
+//builder.Services.AddSingleton<GamesService>
 
 
 // Add services to the container.
