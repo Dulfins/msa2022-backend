@@ -13,3 +13,5 @@ C:\Users\vince\Downloads\MSA\Phase 3\msa2022-backend\Service_Layer\obj\Debug\net
 C:\Users\vince\Downloads\MSA\Phase 3\msa2022-backend\Service_Layer\obj\Debug\net6.0\refint\Service_Layer.dll
 C:\Users\vince\Downloads\MSA\Phase 3\msa2022-backend\Service_Layer\obj\Debug\net6.0\Service_Layer.pdb
 C:\Users\vince\Downloads\MSA\Phase 3\msa2022-backend\Service_Layer\obj\Debug\net6.0\ref\Service_Layer.dll
+C:\Users\vince\Downloads\MSA\Phase 3\msa2022-backend\Service_Layer\bin\Debug\net6.0\Service_Layer.runtimeconfig.json
+C:\Users\vince\Downloads\MSA\Phase 3\msa2022-backend\Service_Layer\obj\Debug\net6.0\Service_Layer.genruntimeconfig.cache

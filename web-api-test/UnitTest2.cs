@@ -16,7 +16,7 @@ namespace web_api_test
 
             var games = GamesService.GetAll();
 
-            gameController.GetAll().Returns(games);
+            gameController.GetAll().Returns((IActionResult)games);
         }
     }
 }

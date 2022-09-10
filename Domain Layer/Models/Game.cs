@@ -4,11 +4,11 @@ using MediatR;
 namespace Domain_Layer.Models;
 
 
-public class Game 
+public class Game
 {
-    public int Id { get; set; }
     [Required]
-
+    public int Id { get; set; }
+    
     public string? Name { get; set; }
     public bool IsFree { get; set; }
     public string? Genre { get; set; }

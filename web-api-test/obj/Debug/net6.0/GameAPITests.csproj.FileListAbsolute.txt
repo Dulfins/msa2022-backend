@@ -265,5 +265,15 @@ C:\Users\vince\Downloads\MSA\Phase 3\msa2022-backend\web-api-test\bin\Debug\net6
 C:\Users\vince\Downloads\MSA\Phase 3\msa2022-backend\web-api-test\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
 C:\Users\vince\Downloads\MSA\Phase 3\msa2022-backend\web-api-test\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 C:\Users\vince\Downloads\MSA\Phase 3\msa2022-backend\web-api-test\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
-C:\Users\vince\Downloads\MSA\Phase 3\msa2022-backend\web-api-test\bin\Debug\net6.0\DomainLayer.dll
-C:\Users\vince\Downloads\MSA\Phase 3\msa2022-backend\web-api-test\bin\Debug\net6.0\DomainLayer.pdb
+C:\Users\vince\Downloads\MSA\Phase 3\msa2022-backend\web-api-test\bin\Debug\net6.0\MediatR.dll
+C:\Users\vince\Downloads\MSA\Phase 3\msa2022-backend\web-api-test\bin\Debug\net6.0\MediatR.Contracts.dll
+C:\Users\vince\Downloads\MSA\Phase 3\msa2022-backend\web-api-test\bin\Debug\net6.0\MediatR.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\vince\Downloads\MSA\Phase 3\msa2022-backend\web-api-test\bin\Debug\net6.0\Microsoft.Extensions.Caching.StackExchangeRedis.dll
+C:\Users\vince\Downloads\MSA\Phase 3\msa2022-backend\web-api-test\bin\Debug\net6.0\Pipelines.Sockets.Unofficial.dll
+C:\Users\vince\Downloads\MSA\Phase 3\msa2022-backend\web-api-test\bin\Debug\net6.0\StackExchange.Redis.dll
+C:\Users\vince\Downloads\MSA\Phase 3\msa2022-backend\web-api-test\bin\Debug\net6.0\System.Diagnostics.PerformanceCounter.dll
+C:\Users\vince\Downloads\MSA\Phase 3\msa2022-backend\web-api-test\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.0\System.Diagnostics.PerformanceCounter.dll
+C:\Users\vince\Downloads\MSA\Phase 3\msa2022-backend\web-api-test\bin\Debug\net6.0\Domain_Layer.dll
+C:\Users\vince\Downloads\MSA\Phase 3\msa2022-backend\web-api-test\bin\Debug\net6.0\Service_Layer.dll
+C:\Users\vince\Downloads\MSA\Phase 3\msa2022-backend\web-api-test\bin\Debug\net6.0\Domain_Layer.pdb
+C:\Users\vince\Downloads\MSA\Phase 3\msa2022-backend\web-api-test\bin\Debug\net6.0\Service_Layer.pdb

@@ -2,7 +2,10 @@ using Domain_Layer.Models;
 using MediatR;
 using Service_Layer.Services;
 using Microsoft.AspNetCore.Mvc;
-
+using StackExchange.Redis;
+using Microsoft.Extensions.Caching.Distributed;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace GameAPI_MSA2022.Controllers;
 
@@ -10,11 +13,23 @@ namespace GameAPI_MSA2022.Controllers;
 [Route("[controller]")]
 public class GameController : ControllerBase
 {
-    private IMediator _mediator;
+    //private IMediator _mediator;
 
-    public GameController(IMediator mediator)
+    //public GameController(IMediator mediator)
+    //{
+    //    _mediator = mediator;
+    //}
+
+
+    private readonly IDistributedCache _distributedCache;
+
+    private readonly ILogger<GameController> _logger;
+
+    public GameController(ILogger<GameController> logger,
+        IDistributedCache distributedCache)
     {
-        _mediator = mediator;
+        _logger = logger;
+        _distributedCache = distributedCache;
     }
 
 
@@ -24,7 +39,35 @@ public class GameController : ControllerBase
     /// <returns>A list of stored games</returns>
     [HttpGet]
     [ProducesResponseType(200)]
-    public ActionResult<List<Game>> GetAll() => GamesService.GetAll();
+    public async Task<IActionResult> GetAll()
+    {
+        var cacheKey = "gameList";
+        string serializedGameList;
+        List<Game> gameList = new List<Game>();
+        var redisGameList = await _distributedCache.GetAsync(cacheKey);
+        if (redisGameList != null)
+        {
+            serializedGameList = Encoding.UTF8.GetString(redisGameList);
+            //gameList = JsonConvert.DeserializeObject<List<Game>>(serializedCustomerList);
+            gameList = GamesService.GetAll();
+        } else
+        {
+            gameList = GamesService.GetAll();
+            serializedGameList = JsonConvert.SerializeObject(gameList);
+            redisGameList = Encoding.UTF8.GetBytes(serializedGameList);
+            var options = new DistributedCacheEntryOptions()
+                .SetAbsoluteExpiration(DateTime.Now.AddMinutes(10))
+                .SetSlidingExpiration(TimeSpan.FromMinutes(2));
+            await _distributedCache.SetAsync(cacheKey, redisGameList, options);
+        }
+
+        return Ok(gameList);
+    }
+
+    // Old code
+    //public ActionResult<List<Game>> GetAll() => GamesService.GetAll();
+
+
 
 
     /// <summary>

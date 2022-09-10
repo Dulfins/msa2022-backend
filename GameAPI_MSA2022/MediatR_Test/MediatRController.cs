@@ -5,8 +5,6 @@ using MediatR;
 namespace GameAPI_MSA2022.MediatR_Test
 {
 
-    // Throws an error when ran idk
-
     [ApiController]
     [Route("[controller]")]
     public class MediatRController : ControllerBase
