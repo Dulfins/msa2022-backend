@@ -10,12 +10,14 @@ var builder = WebApplication.CreateBuilder(args);
 
 //MediatR
 builder.Services.AddMediatR(Assembly.GetExecutingAssembly());
+
 //builder.Services.AddSingleton<GamesService>
     
 var Configuration = builder.Configuration;
 
 builder.Services.AddDbContext<GameContext>(options =>
     options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
 
 
 // Add services to the container.

@@ -70,6 +70,10 @@
               "target": "Package",
               "version": "[6.0.8, )"
             },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.18.2, )"
+            },
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.1, )"
@@ -171,6 +175,10 @@
               "target": "Package",
               "version": "[6.0.8, )"
             },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.18.2, )"
+            },
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.1, )"
@@ -263,6 +271,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[6.0.8, )"
+            },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.18.2, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",

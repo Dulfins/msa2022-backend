@@ -37,30 +37,30 @@ public class CheapSharkController : ControllerBase
         return Ok(results);
     }
 
-    ///// <summary>
-    ///// Gets deserialized json from one of the games from EpicGames List
-    ///// </summary>
-    ///// <remarks>
-    ///// Retrieves Data from other endpoint and uses that to search for its lowest price
-    ///// </remarks>
-    ///// <returns>A deserialized JSON list representing games containing the game's name and their cheapest price</returns>
-  
-    //[HttpGet("game/{id}")]
-    //[ProducesResponseType(200)]
-    //[ProducesResponseType(404)]
-    //public async Task<IActionResult> GetFromEpicGames(int id)
-    //{
-    //    var game = GamesService.Get(id);
-    //    if (game is null)
-    //        return NotFound();
-    //    var title = game.Name;
-    //    var res = await _client.GetAsync($"?title={title}");
-    //    var content = await res.Content.ReadAsStringAsync();
+    /// <summary>
+    /// Gets deserialized json from one of the games from EpicGames List
+    /// </summary>
+    /// <remarks>
+    /// Retrieves Data from other endpoint and uses that to search for its lowest price
+    /// </remarks>
+    /// <returns>A deserialized JSON list representing games containing the game's name and their cheapest price</returns>
 
-    //    var results = JsonSerializer.Deserialize<IList<GameDetails>>(content);
-    //    if (results is null) {return NotFound();}
-    //    return Ok(results);
-    //}
+    [HttpGet("game/{id}")]
+    [ProducesResponseType(200)]
+    [ProducesResponseType(404)]
+    public async Task<IActionResult> GetFromEpicGames(int id)
+    {
+        var game = GamesService.Get(id);
+        if (game is null)
+            return NotFound();
+        var title = game.Name;
+        var res = await _client.GetAsync($"?title={title}");
+        var content = await res.Content.ReadAsStringAsync();
+
+        var results = JsonSerializer.Deserialize<IList<GameDetails>>(content);
+        if (results is null) { return NotFound(); }
+        return Ok(results);
+    }
 
 }
 

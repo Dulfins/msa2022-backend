@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     "net6.0": {
-      "Castle.Core/5.0.0": {
+      "Castle.Core/5.1.0": {
         "type": "package",
         "dependencies": {
           "System.Diagnostics.EventLog": "6.0.0"
@@ -798,6 +798,18 @@
             "assetType": "runtime",
             "rid": "win"
           }
+        }
+      },
+      "Moq/4.18.2": {
+        "type": "package",
+        "dependencies": {
+          "Castle.Core": "5.1.0"
+        },
+        "compile": {
+          "lib/net6.0/Moq.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/Moq.dll": {}
         }
       },
       "NETStandard.Library/1.6.1": {
@@ -2394,6 +2406,7 @@
           "Microsoft.EntityFrameworkCore": "6.0.8",
           "Microsoft.EntityFrameworkCore.Relational": "6.0.8",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.8",
+          "Moq": "4.18.2",
           "Newtonsoft.Json": "13.0.1"
         },
         "compile": {
@@ -2414,6 +2427,7 @@
           "Microsoft.EntityFrameworkCore.Relational": "6.0.8",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.8",
           "Microsoft.Extensions.Caching.StackExchangeRedis": "6.0.8",
+          "Moq": "4.18.2",
           "Newtonsoft.Json": "13.0.1",
           "Service_Layer": "1.0.0",
           "StackExchange.Redis": "2.6.66",
@@ -2436,6 +2450,7 @@
           "Domain_Layer": "1.0.0",
           "MediatR.Extensions.Microsoft.DependencyInjection": "10.0.1",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.8",
+          "Moq": "4.18.2",
           "Newtonsoft.Json": "13.0.1"
         },
         "compile": {
@@ -2448,10 +2463,10 @@
     }
   },
   "libraries": {
-    "Castle.Core/5.0.0": {
-      "sha512": "edc8jjyXqzzy8jFdhs36FZdwmlDDTgqPb2Zy1Q5F/f2uAc88bu/VS/0Tpvgupmpl9zJOvOo5ZizVANb0ltN1NQ==",
+    "Castle.Core/5.1.0": {
+      "sha512": "31UJpTHOiWq95CDOHazE3Ub/hE/PydNWsJMwnEVTqFFP4WhAugwpaVGxzOxKgNeSUUeqS2W6lxV+q7u1pAOfXg==",
       "type": "package",
-      "path": "castle.core/5.0.0",
+      "path": "castle.core/5.1.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2459,7 +2474,7 @@
         "CHANGELOG.md",
         "LICENSE",
         "castle-logo.png",
-        "castle.core.5.0.0.nupkg.sha512",
+        "castle.core.5.1.0.nupkg.sha512",
         "castle.core.nuspec",
         "lib/net462/Castle.Core.dll",
         "lib/net462/Castle.Core.xml",
@@ -4214,6 +4229,26 @@
         "runtimes/win/lib/netcoreapp3.0/Microsoft.Win32.SystemEvents.xml",
         "useSharedDesignerContext.txt",
         "version.txt"
+      ]
+    },
+    "Moq/4.18.2": {
+      "sha512": "SjxKYS5nX6prcaT8ZjbkONh3vnh0Rxru09+gQ1a07v4TM530Oe/jq3Q4dOZPfo1wq0LYmTgLOZKrqRfEx4auPw==",
+      "type": "package",
+      "path": "moq/4.18.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net462/Moq.dll",
+        "lib/net462/Moq.xml",
+        "lib/net6.0/Moq.dll",
+        "lib/net6.0/Moq.xml",
+        "lib/netstandard2.0/Moq.dll",
+        "lib/netstandard2.0/Moq.xml",
+        "lib/netstandard2.1/Moq.dll",
+        "lib/netstandard2.1/Moq.xml",
+        "moq.4.18.2.nupkg.sha512",
+        "moq.nuspec",
+        "moq.png"
       ]
     },
     "NETStandard.Library/1.6.1": {
@@ -8336,6 +8371,7 @@
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.8",
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.8",
       "Microsoft.NET.Test.Sdk >= 17.1.0",
+      "Moq >= 4.18.2",
       "NSubstitute >= 4.4.0",
       "Newtonsoft.Json >= 13.0.1",
       "coverlet.collector >= 3.1.2",
@@ -8420,6 +8456,10 @@
           "Microsoft.NET.Test.Sdk": {
             "target": "Package",
             "version": "[17.1.0, )"
+          },
+          "Moq": {
+            "target": "Package",
+            "version": "[4.18.2, )"
           },
           "NSubstitute": {
             "target": "Package",

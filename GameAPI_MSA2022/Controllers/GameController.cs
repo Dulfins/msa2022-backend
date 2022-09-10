@@ -13,11 +13,10 @@ namespace GameAPI_MSA2022.Controllers;
 [Route("[controller]")]
 public class GameController : ControllerBase
 {
-    //private IMediator _mediator;
 
     //public GameController(IMediator mediator)
     //{
-    //    _mediator = mediator;
+
     //}
 
 
@@ -38,8 +37,7 @@ public class GameController : ControllerBase
     /// </summary>
     /// <returns>A list of stored games</returns>
     [HttpGet]
-    [ProducesResponseType(200)]
-    public async Task<IActionResult> GetAll()
+    public async Task<IActionResult> RedisGetAll()
     {
         var cacheKey = "gameList";
         string serializedGameList;
@@ -48,7 +46,7 @@ public class GameController : ControllerBase
         if (redisGameList != null)
         {
             serializedGameList = Encoding.UTF8.GetString(redisGameList);
-            //gameList = JsonConvert.DeserializeObject<List<Game>>(serializedCustomerList);
+            //gameList = JsonConvert.DeserializeObject<List<Game>>(serializedGameList);
             gameList = GamesService.GetAll();
         } else
         {
@@ -64,10 +62,11 @@ public class GameController : ControllerBase
         return Ok(gameList);
     }
 
-    // Old code
+    // OLD CODE
+
+    //[HttpGet]
+    //[ProducesResponseType(200)]
     //public ActionResult<List<Game>> GetAll() => GamesService.GetAll();
-
-
 
 
     /// <summary>

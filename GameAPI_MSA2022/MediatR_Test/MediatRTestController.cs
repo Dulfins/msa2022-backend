@@ -7,11 +7,11 @@ namespace GameAPI_MSA2022.MediatR_Test
 
     [ApiController]
     [Route("[controller]")]
-    public class MediatRController : ControllerBase
+    public class MediatRTestController : ControllerBase
     {
         private IMediator _mediator;
 
-        public MediatRController(IMediator mediator)
+        public MediatRTestController(IMediator mediator)
         {
             _mediator = mediator;
         }

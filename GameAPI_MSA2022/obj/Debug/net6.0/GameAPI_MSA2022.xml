@@ -13,7 +13,16 @@
             </summary>
             <returns>A deserialized JSON list representing games containing that name and their cheapest price</returns>
         </member>
-        <member name="M:GameAPI_MSA2022.Controllers.GameController.GetAll">
+        <member name="M:GameAPI_MSA2022.Controllers.CheapSharkController.GetFromEpicGames(System.Int32)">
+            <summary>
+            Gets deserialized json from one of the games from EpicGames List
+            </summary>
+            <remarks>
+            Retrieves Data from other endpoint and uses that to search for its lowest price
+            </remarks>
+            <returns>A deserialized JSON list representing games containing the game's name and their cheapest price</returns>
+        </member>
+        <member name="M:GameAPI_MSA2022.Controllers.GameController.RedisGetAll">
             <summary>
             This endpoint takes no arguments and gives you a list of games, 
             </summary>

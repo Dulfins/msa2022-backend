@@ -22,7 +22,7 @@
             </remarks>
             <returns>A deserialized JSON list representing games containing the game's name and their cheapest price</returns>
         </member>
-        <member name="M:GameAPI_MSA2022.Controllers.GameController.GetAll">
+        <member name="M:GameAPI_MSA2022.Controllers.GameController.RedisGetAll">
             <summary>
             This endpoint takes no arguments and gives you a list of games, 
             </summary>
